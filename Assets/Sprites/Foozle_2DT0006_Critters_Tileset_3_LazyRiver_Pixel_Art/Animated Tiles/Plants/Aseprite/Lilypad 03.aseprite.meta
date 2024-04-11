@@ -1,0 +1,584 @@
+fileFormatVersion: 2
+guid: baf87d3ae8ec67f4ea516896d3d9b60b
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Lilypad 03_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: -2.1666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 16
+      height: 6
+    spriteID: ff94a50c56262a245a240cd38fc20d88
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Lilypad 03_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -2.1666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 18
+      width: 16
+      height: 6
+    spriteID: d4833db5e200b9849908e2ec8ca513a6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 18}
+  - name: Lilypad 03_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -2.1666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 32
+      width: 16
+      height: 6
+    spriteID: 2520d749f76c72640a73d2b477ce4acc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 32}
+  - name: Lilypad 03_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -2.1666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 46
+      width: 16
+      height: 6
+    spriteID: 4291b3a6468ba824da6a6605a0b92925
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 46}
+  - name: Lilypad 03_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: -2.1666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 60
+      width: 16
+      height: 6
+    spriteID: 71ef32b39e4eeb54788ed91076cb605f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 60}
+  - name: Lilypad 03_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: -2.1666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 74
+      width: 16
+      height: 6
+    spriteID: 1031bb54e0e414944b7dc79d62a4a47f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 74}
+  - name: Lilypad 03_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: -2.1666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 88
+      width: 16
+      height: 6
+    spriteID: 3c4043c3951311f4c8bcc60d0e56ee55
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 88}
+  - name: Lilypad 03_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: -2.1666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 102
+      width: 16
+      height: 6
+    spriteID: 6f401297a7ec1c9479528051021f1cbf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 102}
+  - name: Lilypad 03_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: -2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 116
+      width: 16
+      height: 6
+    spriteID: b6444821cc556fd4fae576d4fb92a9bb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 116}
+  - name: Lilypad 03_Frame_9
+    originalName: 
+    pivot: {x: 0.5, y: -2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 28
+      y: 4
+      width: 16
+      height: 6
+    spriteID: 5f6fa283bee8cb141bd3f16b37e25154
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 28, y: 4}
+  - name: Lilypad 03_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: -2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 28
+      y: 18
+      width: 16
+      height: 6
+    spriteID: 510dd837a2721e94d9d70f774c3d023d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 28, y: 18}
+  - name: Lilypad 03_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: -2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 28
+      y: 32
+      width: 16
+      height: 6
+    spriteID: 4777aa27d1beecc47901375a4bc88f6d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 28, y: 32}
+  - name: Lilypad 03_Frame_12
+    originalName: 
+    pivot: {x: 0.5, y: -2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 28
+      y: 46
+      width: 16
+      height: 6
+    spriteID: 847ec296a30627946b10cdf6d634d136
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 28, y: 46}
+  - name: Lilypad 03_Frame_13
+    originalName: 
+    pivot: {x: 0.5, y: -2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 28
+      y: 60
+      width: 16
+      height: 6
+    spriteID: 42a4d78ab7e49e0438a59d90458f36b7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 28, y: 60}
+  - name: Lilypad 03_Frame_14
+    originalName: 
+    pivot: {x: 0.5, y: -2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 28
+      y: 74
+      width: 16
+      height: 6
+    spriteID: 749bd7410b439194d9fbe08c2ff5ae01
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 28, y: 74}
+  - name: Lilypad 03_Frame_15
+    originalName: 
+    pivot: {x: 0.5, y: -2}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 28
+      y: 88
+      width: 16
+      height: 6
+    spriteID: 4746af516e0e47542a52286a220ab0c6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 28, y: 88}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 838301364
+    name: Lilypad 03
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Lilypad 03_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 13
+        width: 16
+        height: 6
+      spriteId: ff94a50c56262a245a240cd38fc20d88
+    - name: Lilypad 03_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: 13
+        width: 16
+        height: 6
+      spriteId: d4833db5e200b9849908e2ec8ca513a6
+    - name: Lilypad 03_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: 13
+        width: 16
+        height: 6
+      spriteId: 2520d749f76c72640a73d2b477ce4acc
+    - name: Lilypad 03_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: 13
+        width: 16
+        height: 6
+      spriteId: 4291b3a6468ba824da6a6605a0b92925
+    - name: Lilypad 03_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: 13
+        width: 16
+        height: 6
+      spriteId: 71ef32b39e4eeb54788ed91076cb605f
+    - name: Lilypad 03_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 0
+        y: 13
+        width: 16
+        height: 6
+      spriteId: 1031bb54e0e414944b7dc79d62a4a47f
+    - name: Lilypad 03_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 0
+        y: 13
+        width: 16
+        height: 6
+      spriteId: 3c4043c3951311f4c8bcc60d0e56ee55
+    - name: Lilypad 03_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 0
+        y: 13
+        width: 16
+        height: 6
+      spriteId: 6f401297a7ec1c9479528051021f1cbf
+    - name: Lilypad 03_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 0
+        y: 12
+        width: 16
+        height: 6
+      spriteId: b6444821cc556fd4fae576d4fb92a9bb
+    - name: Lilypad 03_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 0
+        y: 12
+        width: 16
+        height: 6
+      spriteId: 5f6fa283bee8cb141bd3f16b37e25154
+    - name: Lilypad 03_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 0
+        y: 12
+        width: 16
+        height: 6
+      spriteId: 510dd837a2721e94d9d70f774c3d023d
+    - name: Lilypad 03_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 0
+        y: 12
+        width: 16
+        height: 6
+      spriteId: 4777aa27d1beecc47901375a4bc88f6d
+    - name: Lilypad 03_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 0
+        y: 12
+        width: 16
+        height: 6
+      spriteId: 847ec296a30627946b10cdf6d634d136
+    - name: Lilypad 03_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 0
+        y: 12
+        width: 16
+        height: 6
+      spriteId: 42a4d78ab7e49e0438a59d90458f36b7
+    - name: Lilypad 03_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 0
+        y: 12
+        width: 16
+        height: 6
+      spriteId: 749bd7410b439194d9fbe08c2ff5ae01
+    - name: Lilypad 03_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 0
+        y: 12
+        width: 16
+        height: 6
+      spriteId: 4746af516e0e47542a52286a220ab0c6
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 16, y: 32}
