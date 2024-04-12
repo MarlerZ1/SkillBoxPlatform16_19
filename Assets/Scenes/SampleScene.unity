@@ -632,7 +632,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 400
-  layerMask: Ground
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
   curve:
     serializedVersion: 2
     m_Curve:

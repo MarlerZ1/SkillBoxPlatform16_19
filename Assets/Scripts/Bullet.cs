@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private float damage;
     [SerializeField] private string damagableTag;
-    [SerializeField] private string bulletLayer;
+    [SerializeField] private LayerMask bulletLayer;
     private string _from;
 
 
@@ -18,8 +18,8 @@ public class Bullet : MonoBehaviour
         {
             collision.GetComponent<Health>().TakeDamage(damage);
         }
-
-        if (collision.gameObject.layer == LayerMask.NameToLayer(bulletLayer))
+        
+        if (bulletLayer.Contains(collision.gameObject.layer))
         {
             if (_from == collision.gameObject.GetComponent<Bullet>().GetFrom())
                 return;

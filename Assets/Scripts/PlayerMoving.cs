@@ -13,7 +13,7 @@ public class PlayerMoving : MonoBehaviour
     [Header("Move force")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
-    [SerializeField] private string layerMask; 
+    [SerializeField] private LayerMask layerMask; 
 
     [Header("Move Curve Settings")]
     [SerializeField] private AnimationCurve curve;
@@ -99,7 +99,7 @@ public class PlayerMoving : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
 
-        if (collision.gameObject.layer == LayerMask.NameToLayer(layerMask))
+        if (layerMask.Contains(collision.gameObject.layer))
         {
             //print("_isGrounded " + _isGrounded);
             _isGrounded = true;
@@ -107,7 +107,7 @@ public class PlayerMoving : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer(layerMask))
+        if (layerMask.Contains(collision.gameObject.layer))
         {
             //print("_isGrounded " + _isGrounded);
             _isGrounded = false;
