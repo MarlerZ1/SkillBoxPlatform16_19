@@ -5,6 +5,7 @@ using UnityEditor.UIElements;
 using UnityEngine;
 
 [DisallowMultipleComponent]
+[RequireComponent(typeof(PlayerAnimationState))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMoving : MonoBehaviour
 {
@@ -12,10 +13,6 @@ public class PlayerMoving : MonoBehaviour
     [Header("Move force")]
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
-
-    /*    [Header("Jump Raycast Settings")]
-        [SerializeField] private Transform overlapCircleObject;
-        [SerializeField] private float jumpOffset;*/
     [SerializeField] private string layerMask; 
 
     [Header("Move Curve Settings")]
@@ -24,13 +21,15 @@ public class PlayerMoving : MonoBehaviour
 
     private bool _isGrounded = false;
     private int elapsedFrames = 0;
+    private PlayerAnimationState _playerAnimationState;
     private Rigidbody2D _rb;
     private Controls _controls;
-    //private SpriteRenderer _sp;
+
     private void Awake()
     {
         _controls = ControlsSingletone.GetControls();
         _rb = GetComponent<Rigidbody2D>();
+        _playerAnimationState = GetComponent<PlayerAnimationState>();
         //_sp = GetComponent<SpriteRenderer>();
     }
 
@@ -47,14 +46,20 @@ public class PlayerMoving : MonoBehaviour
         float direction = _controls.Move.Moving.ReadValue<float>();
         if (direction == 1)
         {
+            _playerAnimationState.HeroRun();
             transform.rotation = Quaternion.Euler(0, 0, 0);
         } else if (direction == -1)
         {
+            _playerAnimationState.HeroRun();
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
 
         if (direction == 0)
+        {
             elapsedFrames = 0;
+            if (_playerAnimationState.GetState() == "Run")
+                _playerAnimationState.HeroIdle();
+        }
         else
             elapsedFrames++;
 

@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
+[RequireComponent(typeof(PlayerAnimationState))]
 public class PlayerAttack : MonoBehaviour
 {
     [SerializeField] private GameObject magicAttackObject;
     [SerializeField] private Transform magicAttackStartPoint;
     [SerializeField] private float magicAttackSpeed;
 
-
+    private PlayerAnimationState _playerAnimationState;
     private Controls _controls;
     //private SpriteRenderer _sp;
 
     private void MagicAttack()
     {
+        _playerAnimationState.HeroAttack();
+
         GameObject magicBullet = Instantiate(magicAttackObject, magicAttackStartPoint.position, Quaternion.identity);
         magicBullet.GetComponent<Bullet>().SetFrom("Player");
 
@@ -32,6 +35,7 @@ public class PlayerAttack : MonoBehaviour
     private void Awake()
     {
         _controls = ControlsSingletone.GetControls();
+        _playerAnimationState = GetComponent<PlayerAnimationState>();
         //_sp = GetComponent<SpriteRenderer>();
     }
 
