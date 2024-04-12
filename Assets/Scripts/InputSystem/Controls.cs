@@ -92,6 +92,34 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Attack"",
+            ""id"": ""097869cc-1a81-4e24-99e4-b5c121596ffb"",
+            ""actions"": [
+                {
+                    ""name"": ""Magic"",
+                    ""type"": ""Button"",
+                    ""id"": ""6a8784a3-c82c-41e5-8bc7-674979105560"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""66cf08a4-f93d-42b5-bb79-0ee0f7c05f2f"",
+                    ""path"": ""<Keyboard>/leftAlt"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Magic"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -117,6 +145,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Move = asset.FindActionMap("Move", throwIfNotFound: true);
         m_Move_Moving = m_Move.FindAction("Moving", throwIfNotFound: true);
         m_Move_Jumping = m_Move.FindAction("Jumping", throwIfNotFound: true);
+        // Attack
+        m_Attack = asset.FindActionMap("Attack", throwIfNotFound: true);
+        m_Attack_Magic = m_Attack.FindAction("Magic", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -228,6 +259,52 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         }
     }
     public MoveActions @Move => new MoveActions(this);
+
+    // Attack
+    private readonly InputActionMap m_Attack;
+    private List<IAttackActions> m_AttackActionsCallbackInterfaces = new List<IAttackActions>();
+    private readonly InputAction m_Attack_Magic;
+    public struct AttackActions
+    {
+        private @Controls m_Wrapper;
+        public AttackActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Magic => m_Wrapper.m_Attack_Magic;
+        public InputActionMap Get() { return m_Wrapper.m_Attack; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(AttackActions set) { return set.Get(); }
+        public void AddCallbacks(IAttackActions instance)
+        {
+            if (instance == null || m_Wrapper.m_AttackActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_AttackActionsCallbackInterfaces.Add(instance);
+            @Magic.started += instance.OnMagic;
+            @Magic.performed += instance.OnMagic;
+            @Magic.canceled += instance.OnMagic;
+        }
+
+        private void UnregisterCallbacks(IAttackActions instance)
+        {
+            @Magic.started -= instance.OnMagic;
+            @Magic.performed -= instance.OnMagic;
+            @Magic.canceled -= instance.OnMagic;
+        }
+
+        public void RemoveCallbacks(IAttackActions instance)
+        {
+            if (m_Wrapper.m_AttackActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IAttackActions instance)
+        {
+            foreach (var item in m_Wrapper.m_AttackActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_AttackActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public AttackActions @Attack => new AttackActions(this);
     private int m_PCSchemeIndex = -1;
     public InputControlScheme PCScheme
     {
@@ -241,5 +318,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     {
         void OnMoving(InputAction.CallbackContext context);
         void OnJumping(InputAction.CallbackContext context);
+    }
+    public interface IAttackActions
+    {
+        void OnMagic(InputAction.CallbackContext context);
     }
 }

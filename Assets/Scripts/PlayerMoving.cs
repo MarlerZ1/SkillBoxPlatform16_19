@@ -26,12 +26,12 @@ public class PlayerMoving : MonoBehaviour
     private int elapsedFrames = 0;
     private Rigidbody2D _rb;
     private Controls _controls;
-    private SpriteRenderer _sp;
+    //private SpriteRenderer _sp;
     private void Awake()
     {
         _controls = ControlsSingletone.GetControls();
         _rb = GetComponent<Rigidbody2D>();
-        _sp = GetComponent<SpriteRenderer>();
+        //_sp = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -47,10 +47,10 @@ public class PlayerMoving : MonoBehaviour
         float direction = _controls.Move.Moving.ReadValue<float>();
         if (direction == 1)
         {
-            _sp.flipX = false;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         } else if (direction == -1)
         {
-            _sp.flipX = true;
+            transform.rotation = Quaternion.Euler(0, 180, 0);
         }
 
         if (direction == 0)
