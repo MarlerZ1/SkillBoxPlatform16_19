@@ -38,4 +38,11 @@ public class PlayerAnimationState : MonoBehaviour
         _animator.SetBool("isRunning", false);
         _animator.SetBool("isAttack", false);
     }
+    
+    public void HeroAttackMagic()
+    {
+        _currentState = "AttackMagic";
+        _animator.SetBool("isRunning", false);
+        _animator.SetBool("isAttack", false);
+    }
 }
