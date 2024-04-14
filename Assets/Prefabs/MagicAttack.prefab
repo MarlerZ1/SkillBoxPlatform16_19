@@ -166,3 +166,4 @@ MonoBehaviour:
   bulletLayer:
     serializedVersion: 2
     m_Bits: 128
+  timeAlive: 5

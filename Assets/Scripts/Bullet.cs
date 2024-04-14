@@ -9,8 +9,20 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private string damagableTag;
     [SerializeField] private LayerMask bulletLayer;
+    [SerializeField] private float timeAlive;
     private string _from;
 
+
+    private void Start()
+    {
+        StartCoroutine(IEDestroy());
+    }
+
+    private IEnumerator IEDestroy()
+    {
+        yield return new WaitForSeconds(timeAlive);
+        Destroy(gameObject);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -37,5 +49,10 @@ public class Bullet : MonoBehaviour
     public string GetFrom()
     {
         return _from;
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
     }
 }
