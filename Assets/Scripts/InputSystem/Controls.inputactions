@@ -83,6 +83,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Sword",
+                    "type": "Button",
+                    "id": "0352bb95-f5bc-4ec9-87ea-2dd320113cf5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -94,6 +103,17 @@
                     "processors": "",
                     "groups": "PC",
                     "action": "Magic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "903206ca-ea13-4c8e-9e14-53a73a015f86",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "Sword",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

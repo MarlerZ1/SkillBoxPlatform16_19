@@ -25,7 +25,7 @@ public class PlayerAnimationState : MonoBehaviour
         _animator.SetBool("isAttack", false);
     }
 
-    public void HeroAttack()
+    public void HeroAttackSword()
     {
         _currentState = "Attack";
         _animator.SetBool("isRunning", false);

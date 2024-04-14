@@ -906,6 +906,7 @@ Transform:
   m_Children:
   - {fileID: 1910797702}
   - {fileID: 1928672488}
+  - {fileID: 191846922}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &97533002
@@ -1103,8 +1104,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   magicAttackObject: {fileID: 690898879521535069, guid: 7470614f5f896724aa9f29ebb5bd8152, type: 3}
   magicAttackStartPoint: {fileID: 1928672488}
+  swordAttackCollisionPoint: {fileID: 191846922}
+  damagableTag: Damagable
+  dontDamagableLayers:
+    serializedVersion: 2
+    m_Bits: 8
   magicAttackSpeed: 15
-  coldownTime: 1
+  magicAttackColdownTime: 1
+  swordAttackDamage: 30
+  swordAttackDamageDelay: 0.5
+  swordAttackColdownTime: 1.5
+  swordAttackRadius: 1
 --- !u!114 &97533008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1565,6 +1575,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6493682197421162840, guid: 9844e2b86cb2f60459fc2d7f0cfc6f13, type: 3}
   m_PrefabInstance: {fileID: 279558869}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &191846921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 191846922}
+  - component: {fileID: 191846923}
+  m_Layer: 3
+  m_Name: swordAttackStartPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &191846922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191846921}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.52, y: 0.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 97533001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &191846923
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191846921}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!1 &203773735
 GameObject:
   m_ObjectHideFlags: 0

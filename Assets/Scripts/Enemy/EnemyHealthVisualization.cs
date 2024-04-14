@@ -38,12 +38,9 @@ public class EnemyHealthVisualization : MonoBehaviour
     {
         
         if (currentHp != maxHp && !hpBarGameObject.activeInHierarchy)
-        {
+        
             hpBarGameObject.SetActive(true);
-            hpBarImage.fillAmount = (float)currentHp / maxHp;
-           
-        }
-
+        hpBarImage.fillAmount = (float)currentHp / maxHp;
 
     }
 }

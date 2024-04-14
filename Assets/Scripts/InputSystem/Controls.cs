@@ -105,6 +105,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Sword"",
+                    ""type"": ""Button"",
+                    ""id"": ""0352bb95-f5bc-4ec9-87ea-2dd320113cf5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -116,6 +125,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""PC"",
                     ""action"": ""Magic"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""903206ca-ea13-4c8e-9e14-53a73a015f86"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Sword"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -148,6 +168,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         // Attack
         m_Attack = asset.FindActionMap("Attack", throwIfNotFound: true);
         m_Attack_Magic = m_Attack.FindAction("Magic", throwIfNotFound: true);
+        m_Attack_Sword = m_Attack.FindAction("Sword", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -264,11 +285,13 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Attack;
     private List<IAttackActions> m_AttackActionsCallbackInterfaces = new List<IAttackActions>();
     private readonly InputAction m_Attack_Magic;
+    private readonly InputAction m_Attack_Sword;
     public struct AttackActions
     {
         private @Controls m_Wrapper;
         public AttackActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Magic => m_Wrapper.m_Attack_Magic;
+        public InputAction @Sword => m_Wrapper.m_Attack_Sword;
         public InputActionMap Get() { return m_Wrapper.m_Attack; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -281,6 +304,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Magic.started += instance.OnMagic;
             @Magic.performed += instance.OnMagic;
             @Magic.canceled += instance.OnMagic;
+            @Sword.started += instance.OnSword;
+            @Sword.performed += instance.OnSword;
+            @Sword.canceled += instance.OnSword;
         }
 
         private void UnregisterCallbacks(IAttackActions instance)
@@ -288,6 +314,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Magic.started -= instance.OnMagic;
             @Magic.performed -= instance.OnMagic;
             @Magic.canceled -= instance.OnMagic;
+            @Sword.started -= instance.OnSword;
+            @Sword.performed -= instance.OnSword;
+            @Sword.canceled -= instance.OnSword;
         }
 
         public void RemoveCallbacks(IAttackActions instance)
@@ -322,5 +351,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     public interface IAttackActions
     {
         void OnMagic(InputAction.CallbackContext context);
+        void OnSword(InputAction.CallbackContext context);
     }
 }
