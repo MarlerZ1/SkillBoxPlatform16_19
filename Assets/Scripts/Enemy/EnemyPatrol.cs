@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,9 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(BoxCollider2D))]
 public class EnemyPatrol : MonoBehaviour
 {
+    public event Action<float> OnRotationChanged;
+
+
     [Header("RayCast settings")]
     [SerializeField] private float rayCastDistance;
     [SerializeField] private Transform groundRaycastPointFirst;
@@ -77,7 +81,11 @@ public class EnemyPatrol : MonoBehaviour
     private void ChangeDirection()
     {
         _direction = -_direction;
-        transform.rotation = Quaternion.Euler(0, transform.rotation.y == -1 ? 0 : 180, 0);
+        //print("Enemy rot1" + transform.rotation.y);
+        bool rotationFlag = transform.rotation.y == -1;
+        transform.rotation = Quaternion.Euler(0, rotationFlag ? 0 : 180, 0);
+        OnRotationChanged?.Invoke(rotationFlag ? 180 : 0);
+        //print("Enemy rot2" + transform.rotation.y);
     }
 
     private void EnemyIdle()

@@ -66,7 +66,7 @@ public class PlayerMoving : MonoBehaviour
 
         float interpolatedValue = Mathf.Lerp(0, direction, (float)elapsedFrames / interpolationFramesCount);
         _rb.velocity = new Vector2(curve.Evaluate(interpolatedValue) * moveSpeed, _rb.velocity.y);
-        print(_rb.velocity);
+       // print(_rb.velocity);
 
     }
 
