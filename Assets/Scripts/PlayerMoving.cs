@@ -42,12 +42,25 @@ public class PlayerMoving : MonoBehaviour
         float direction = _controls.Move.Moving.ReadValue<float>();
         if (direction == 1)
         {
-            _playerAnimationState.HeroRun();
+            if (_playerAnimationState.GetState() != "Attack")
+                _playerAnimationState.HeroRun();
+            else if (_isGrounded)
+                _rb.velocity = new Vector2(0, _rb.velocity.y);
+
             transform.rotation = Quaternion.Euler(0, 0, 0);
         } else if (direction == -1)
         {
-            _playerAnimationState.HeroRun();
+            if (_playerAnimationState.GetState() != "Attack")
+                _playerAnimationState.HeroRun();
+            else if(_isGrounded)
+                _rb.velocity = new Vector2(0, _rb.velocity.y);
             transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+
+        if (_playerAnimationState.GetState() == "Attack")
+        {
+            elapsedFrames = 0;
+            return;
         }
 
         if (direction == 0)
