@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Image))]
-public class PlayerHPBarVosualizptor : MonoBehaviour
+public class PlayerHPBarVisualizator : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject wasted;
