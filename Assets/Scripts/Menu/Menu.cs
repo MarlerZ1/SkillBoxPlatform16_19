@@ -24,17 +24,17 @@ public class Menu : MonoBehaviour
         if (Time.timeScale == 0)
         {
             Time.timeScale = 1;
-            for (int i = 0; i < onPauseActivateElements.Length; i++)
+            for (int i = 0; i < onPauseDeactivateElements.Length; i++)
             {
-                onPauseActivateElements[i].SetActive(false);
+                onPauseDeactivateElements[i].SetActive(false);
             }
         }
         else if (Time.timeScale == 1)
         {
             Time.timeScale = 0;
-            for (int i = 0; i < onPauseDeactivateElements.Length; i++)
+            for (int i = 0; i < onPauseActivateElements.Length; i++)
             {
-                onPauseDeactivateElements[i].SetActive(true);
+                onPauseActivateElements[i].SetActive(true);
             }
         }
     }

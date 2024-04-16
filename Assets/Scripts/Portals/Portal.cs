@@ -13,7 +13,6 @@ public class Portal : MonoBehaviour
 
     [Header("If player Collision waiting")]
     [SerializeField] private bool waitPlayerCollision;
-    [SerializeField, Range(0, 120)] private float animationCloseWait = 3f;
 
     [Header("If just exists")]
     [SerializeField, Range(0, 120)] private float existsTime;
@@ -48,29 +47,23 @@ public class Portal : MonoBehaviour
 
     public void DestroyGameObject()
     {
+        bool isLvlLast = !_menu.LoadNextLvlBool();
+
+
+        if (isLvlLast)
+        {
+            OnLvlLastComplete?.Invoke();
+        }
         Destroy(gameObject);
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (nextLvlActivateLayerMask.Contains(collision.gameObject.layer))
+        if (waitPlayerCollision && nextLvlActivateLayerMask.Contains(collision.gameObject.layer))
         {
-            StartCoroutine(IEWaitForDelete());
-        }
-    }
-
-
-    private IEnumerator IEWaitForDelete()
-    {
-        animator.SetBool("isIdle", false);
-        yield return new WaitForSeconds(animationCloseWait);
-
-        bool isLvlLast = !_menu.LoadNextLvlBool();
-        
-        if (isLvlLast)
-        {
-            OnLvlLastComplete?.Invoke();
+            collision.gameObject.SetActive(false);
+            animator.SetBool("isIdle", false);
         }
     }
 }
