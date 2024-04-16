@@ -56,9 +56,18 @@ public class Menu : MonoBehaviour
         LoadLvl(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void LoadLvl(int lvlNumber)
+    public bool LoadNextLvlBool()
     {
+        return LoadLvl(SceneManager.GetActiveScene().buildIndex + 1); 
+    }
+
+    public bool LoadLvl(int lvlNumber)
+    {
+        if (lvlNumber > SceneManager.sceneCount)
+            return false;
+
         SceneManager.LoadScene(lvlNumber);
         Time.timeScale= 1;
+        return true;
     }
 }
