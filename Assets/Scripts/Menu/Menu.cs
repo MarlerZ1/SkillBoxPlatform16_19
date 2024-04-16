@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-
+[DisallowMultipleComponent]
 public class Menu : MonoBehaviour
 {
     [SerializeField] GameObject[] onPauseActivateElements;
@@ -26,7 +26,7 @@ public class Menu : MonoBehaviour
             Time.timeScale = 1;
             for (int i = 0; i < onPauseActivateElements.Length; i++)
             {
-                onPauseActivateElements[i].SetActive(true);
+                onPauseActivateElements[i].SetActive(false);
             }
         }
         else if (Time.timeScale == 1)
