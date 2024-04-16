@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ using UnityEngine;
 public class GameWinMenu : MonoBehaviour
 {
     [SerializeField] private Portal portal;
-
+    [SerializeField] private TMP_Text text;
     private Menu _menu;
     private void Start()
     {
@@ -20,5 +21,6 @@ public class GameWinMenu : MonoBehaviour
     private void ActivateWinScreen()
     {
         _menu.ChangePauseState();
+        text.text = GameScoreCounter.GetGameScoreCounter().ToString();
     }
 }
