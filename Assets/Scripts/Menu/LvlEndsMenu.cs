@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
-
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Menu))]
-public class GameWinMenu : MonoBehaviour
+public class LvlEndsMenu : MonoBehaviour
 {
     [SerializeField] private Portal portal;
     [SerializeField] private TMP_Text text;
@@ -18,15 +16,15 @@ public class GameWinMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        portal.OnLvlLastComplete += ActivateWinScreen;
+        portal.OnLvlLastComplete += ActivateLvlEndScreen;
     }
 
     private void OnDisable()
     {
-        portal.OnLvlLastComplete -= ActivateWinScreen;
+        portal.OnLvlLastComplete -= ActivateLvlEndScreen;
     }
 
-    private void ActivateWinScreen()
+    private void ActivateLvlEndScreen()
     {
         _menu.ChangePauseState();
         text.text = GameScoreCounter.GetGameScoreCounter().ToString();

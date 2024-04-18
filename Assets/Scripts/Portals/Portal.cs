@@ -10,6 +10,7 @@ public class Portal : MonoBehaviour
 {
 
     public event Action OnLvlLastComplete;
+    public event Action OnLvlComplete;
 
     [Header("If player Collision waiting")]
     [SerializeField] private bool waitPlayerCollision;
@@ -44,15 +45,18 @@ public class Portal : MonoBehaviour
         animator.SetBool("isIdle", false);
     }
 
-
+    //revork
     public void DestroyGameObject()
     {
-        bool isLvlLast = !_menu.LoadNextLvlBool();
+        bool isLvlLast = !_menu.CanLoadNextLvl();
 
 
         if (isLvlLast)
         {
             OnLvlLastComplete?.Invoke();
+        } else
+        {
+            OnLvlComplete?.Invoke();
         }
         Destroy(gameObject);
     }
