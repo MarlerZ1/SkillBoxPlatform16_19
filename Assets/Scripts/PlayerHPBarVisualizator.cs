@@ -23,7 +23,7 @@ public class PlayerHPBarVisualizator : MonoBehaviour
     private void HpBarValueChanger(float damage, float maxHp, float currentHp)
     {
         _hpBar.fillAmount = (float)currentHp / maxHp;
-        if (currentHp == 0)
+        if (currentHp <= 0)
         {
             wasted.SetActive(true);
         }

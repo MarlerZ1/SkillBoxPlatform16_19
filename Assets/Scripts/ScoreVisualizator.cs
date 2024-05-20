@@ -21,4 +21,8 @@ public class ScoreVisualizator : MonoBehaviour
         text.text = score.ToString();
     }
 
+    private void Start()
+    {
+        text.text = GameScoreCounter.GetGameScoreCounter().ToString();
+    }
 }

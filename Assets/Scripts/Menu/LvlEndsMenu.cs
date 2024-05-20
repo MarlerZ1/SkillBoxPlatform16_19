@@ -16,12 +16,12 @@ public class LvlEndsMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        portal.OnLvlLastComplete += ActivateLvlEndScreen;
+        portal.OnLvlComplete += ActivateLvlEndScreen;
     }
 
     private void OnDisable()
     {
-        portal.OnLvlLastComplete -= ActivateLvlEndScreen;
+        portal.OnLvlComplete -= ActivateLvlEndScreen;
     }
 
     private void ActivateLvlEndScreen()

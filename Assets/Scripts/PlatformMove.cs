@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(SliderJoint2D))]
 public class PlatformMove : MonoBehaviour
 {
+    [SerializeField] private LayerMask layerMask;
+
     private SliderJoint2D _sliderJoint;
 
     private void Start()
@@ -14,7 +14,7 @@ public class PlatformMove : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "Player")
+        if (layerMask.Contains(collision.gameObject.layer))
         {
             JointMotor2D motor = _sliderJoint.motor;
             motor.motorSpeed = -motor.motorSpeed;

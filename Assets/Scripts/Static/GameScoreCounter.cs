@@ -19,7 +19,7 @@ public class GameScoreCounter : MonoBehaviour
     {
         return _gameScore;
     }
-  
 
     
+
 }

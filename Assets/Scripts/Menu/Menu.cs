@@ -49,11 +49,13 @@ public class Menu : MonoBehaviour
     public void ReloadCurrentLvl() 
     {
         LoadLvl(SceneManager.GetActiveScene().buildIndex);
+        print("Reload:");
     }
 
     public void LoadNextLvl()
     {
         LoadLvl(SceneManager.GetActiveScene().buildIndex + 1);
+        print("LOAD NEXT:");
     }
 
     public bool LoadNextLvlBool()
@@ -68,7 +70,9 @@ public class Menu : MonoBehaviour
 
     public bool CanLoadLvl(int lvlNumber)
     {
-        if (lvlNumber > SceneManager.sceneCount)
+        print("SceneManager.sceneCount " + SceneManager.sceneCount);
+        if (lvlNumber > 5)
+
             return false;
         return true;
     }
